@@ -5,7 +5,7 @@ const URL = require('../models/urlSchema');
 async function generateShortURL(req, res) {
   if (!req.body) return res.status(400).json({ error: 'url was not found in the request body' });
 
-  const shortId = uid();
+  const shortId = uid.rnd();
   
   try {
     await URL.create({
