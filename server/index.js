@@ -1,7 +1,10 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
 const port = require('./config/port');
 require('./config/mongoDB');
+
+app.use(cors());
 
 // Routes
 const urlRoute = require('./routes/url');
